@@ -1,6 +1,7 @@
-<%= form_tag ({action: 'add', method: 'post'}) do %>
-  <input name=product>
-  <input type=submit value='add to cart'>
+
+<%= form_for :product, :url => {:action => "add"} %>
+  <%= f.text_area :product %>
+  <%= f.submit "Add Product to Cart" %>
 <% end %>
 
 <h1>Your Cart</h1>
