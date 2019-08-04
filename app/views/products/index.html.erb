@@ -1,0 +1,18 @@
+<%= form_tag '/add', method: "post" do %>
+  <%= label_tag :product, "Item:" %>
+  <%= text_field_tag :product, nil, placeholder: "Start typing..." %>
+  <%= submit_tag "add to cart" %>
+<% end %>
+
+<h3>Items in cart</h3>
+
+<% if cart.empty? %>
+  None.
+<% else %>
+<ol>
+  <% cart.each do |product| %>
+  <li><%= product %></li>
+  <% end %>
+</ol>
+<%= link_to "Clear list", clear_list_path %>
+<% end %>
